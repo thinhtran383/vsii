@@ -17,7 +17,8 @@ import space.thinhtran.warehouse.common.Constant;
 import space.thinhtran.warehouse.entity.User;
 import space.thinhtran.warehouse.exception.MissingTokenException;
 import space.thinhtran.warehouse.exception.NoPermissionException;
-import space.thinhtran.warehouse.service.impl.PermissionService;
+import space.thinhtran.warehouse.service.IPermissionService;
+import space.thinhtran.warehouse.service.impl.PermissionServiceImpl;
 import space.thinhtran.warehouse.util.ApiEndpointSecurityInspector;
 import space.thinhtran.warehouse.util.JwtUtil;
 
@@ -31,7 +32,7 @@ public class JwtFilter extends OncePerRequestFilter {
     private final JwtUtil jwtUtil;
     private final UserDetailsService userDetailsService;
     private final ApiEndpointSecurityInspector apiEndpointSecurityInspector;
-    private final PermissionService permissionService;
+    private final IPermissionService permissionService;
 
     private static final String AUTHORIZATION_HEADER = "Authorization";
     private static final String BEARER_PREFIX = "Bearer ";
